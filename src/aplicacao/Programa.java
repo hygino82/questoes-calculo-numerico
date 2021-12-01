@@ -33,7 +33,7 @@ public class Programa {
 			System.out.print("Informe o número de elementos -> ");
 			n = sc.nextInt();
 		}
-		//n = 5;
+		// n = 5;
 		List<Integer> listaDenominador = new ArrayList<>();
 		listaDenominador.add(1);// cada elemento do denominador será o dobro do anterior mais um
 
@@ -56,16 +56,37 @@ public class Programa {
 		System.out.println(soma);
 		sc.close();
 	}
-	
+
 	public static void questao02() {
-		
+		Scanner sc = new Scanner(System.in);
+		double a, b, c;
+		System.out.print("Informe a medida do ângulo A -> ");
+		a = sc.nextDouble();
+		System.out.print("Informe a medida do ângulo B -> ");
+		b = sc.nextDouble();
+		System.out.print("Informe a medida do ângulo C -> ");
+		c = sc.nextDouble();
+		if ((a + b + c != 180) || (a <= 0.0) || (b <= 0.0) || (c <= 0.0)) {
+			System.out.println("Os ângulos informados não correspondem a ângulos internos de um triângulo");
+		} else {
+			if ((a > 90.0) || (b > 90.0) || (c > 90.0)) {
+				System.out.println("O triângulo é obtusãngulo");
+			} else if ((a == 90.0) || (b == 90.0) || (c == 90.0)) {
+				System.out.println("O triângulo é retãngulo");
+			} else {
+				System.out.println("O triângulo é acutângulo");
+			}
+
+		}
+		sc.close();
+
 	}
 
 	public static void main(String[] args) {
 
-		questao01();
-		double valor = 1 - 2. / 3 + 6. / 7 - 24. / 15 + 120. / 31;
-		System.out.println(valor);
+		// questao01();
+		questao02();
+
 	}
 
 }
